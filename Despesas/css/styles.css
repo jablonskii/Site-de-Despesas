@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --cor-fundo: #1a1a1a;        /* Preto/Cinza bem escuro para o fundo */
+    --cor-container: #2c2c2c;   /* Cinza escuro para caixas e tabelas */
+    --cor-texto: #e0e0e0;       /* Cinza claro para texto geral */
+    --cor-primaria: #007bff;          /* Azul principal */
+    --cor-primaria-hover: #0056b3; /* Vermelho mais escuro para hover */
+    --cor-borda: #444;          /* Cinza para bordas sutis */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-top: 100px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--cor-primaria-hover);
+    text-decoration: underline;
+}
+
+/* --- Formulários --- */
+form {
+    background-color: var(--cor-container);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    color: var(--cor-texto);
+    box-sizing: border-box; /* Garante que padding não afete a largura total */
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px var(--cor-primaria);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-primaria);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(---cor-primaria-hover);
+}
+
+/* --- Tabelas --- */
+table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    /* A propriedade 'margin-top' antiga será substituída pela nova 'margin' */
+    background-color: var(--cor-container);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+    /* ===== ADICIONE/ALTERE PARA ESTA LINHA ===== */
+    margin: 20px auto; /* Centraliza a tabela horizontalmente e adiciona margem em cima/baixo */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+th {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #333; /* Um pouco mais claro para diferenciar linhas */
+}
+
+tr:hover {
+    background-color: #444;
+}
+
+td a {
+    margin-right: 10px;
+}
+
+/* --- Caixa de Erros (Bônus) --- */
+.error-box {
+    background-color: #4d1a1a;
+    border: 1px solid var(--cor-primaria);
+    color: #ffcdd2;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* --- Container principal para alinhar conteúdo --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    /* Adiciona um espaçamento no topo para não ficar colado na navbar */
+    padding-top: 40px; 
+}
+
+/* --- Estilos para o novo Header --- */
+header {
+    background-color: var(--cor-container);
+    padding: 15px 0; /* Apenas espaçamento vertical */
+    position: sticky;
+    top: 0;
+    width: 100%; /* Garante que ocupe toda a largura */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+}
+.header-content {
+    width: 90%;
+    max-width: 1200px; /* Mesma largura do container principal */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-message h1 {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em; /* Tamanho ajustado para navbar */
+}
+
+
+.welcome-message p {
+    margin: 0;
+    padding: 0;
+    color: #b0b0b0; /* Deixa o texto de boas-vindas um pouco mais sutil */
+}
+
+.logout-button {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: var(--cor-primaria-hover);
+    text-decoration: none;
+}
+
+
+/* --- Estilos para o Retângulo e Botões de Ação --- */
+.actions-container {
+    background-color: var(--cor-container);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    
+    /* Mágica para colocar os botões lado a lado */
+    display: flex;
+    justify-content: center; /* Centraliza os botões no retângulo */
+    gap: 20px; /* Cria um espaço entre os botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+}
+
+.action-button {
+    background-color: transparent;
+    border: 2px solid var(--cor-vermelho);
+    color: var(--cor-texto);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+.action-button:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-decoration: none;
+}
+
+/* --- Pequeno ajuste no título da tabela --- */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
